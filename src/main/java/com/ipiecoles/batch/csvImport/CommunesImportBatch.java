@@ -169,15 +169,15 @@ public class CommunesImportBatch {
                 .build();
     }
 
-    @Bean
-    public Job importCsvJob(Step stepImportCSV, Step stepImportCSVNoGps) {
-        return jobBuilderFactory.get("importCsvJob")
-                .incrementer(new RunIdIncrementer())
-                .flow(stepHelloWorld())
-                .next(stepImportCSV)
-                .on("COMPLETED_WITH_MISSING_COORDINATES").to(stepImportCSVNoGps)
-                .end()
-                .build();
-    }
+//    @Bean
+//    public Job importCsvJob(Step stepImportCSV, Step stepImportCSVNoGps) {
+//        return jobBuilderFactory.get("importCsvJob")
+//                .incrementer(new RunIdIncrementer())
+//                .flow(stepHelloWorld())
+//                .next(stepImportCSV)
+//                .on("COMPLETED_WITH_MISSING_COORDINATES").to(stepImportCSVNoGps)
+//                .end()
+//                .build();
+//    }
 
 }

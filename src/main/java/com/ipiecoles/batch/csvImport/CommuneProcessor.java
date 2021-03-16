@@ -69,7 +69,7 @@ public class CommuneProcessor implements ItemProcessor<CommuneDto, Commune> {
     @AfterStep
     public ExitStatus afterStep(StepExecution stepExecution) {
         logger.info("Exec du AfterStepListener");
-        logger.info(stepExecution.getExecutionContext().getString("MSG"));
+//        logger.info(stepExecution.getExecutionContext().getString("MSG"));
         logger.info(stepExecution.getSummary());
         if(nbCommunesWithoutCoordinates > 0){
             return new ExitStatus("COMPLETED_WITH_MISSING_COORDINATES");
